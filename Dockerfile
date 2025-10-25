@@ -7,7 +7,7 @@ COPY client/ ./
 RUN npm run build
 
 # Stage 2: Build the FastAPI backend
-FROM python:3.9-slim
+FROM python:3.10-slim
 WORKDIR /app
 COPY --from=builder /app/client/dist ./client/dist
 COPY requirements.txt .
